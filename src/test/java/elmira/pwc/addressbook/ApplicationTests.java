@@ -111,16 +111,4 @@ public class ApplicationTests {
 				, Matchers.containsInAnyOrder(expectedContacts));
 	}
 
-	@Test
-	public void addContacts() {
-
-		Contact emergency = new Contact("Emergency", "000");
-        emergency = contactRepository.saveAndFlush(emergency);
-
-        Optional<Contact> contactOption = contactRepository.findById(emergency.getId());
-
-        Assert.assertTrue(contactOption.isPresent());
-        Assert.assertEquals(contactOption.get(), emergency);
-	}
-
 }
